@@ -1,16 +1,10 @@
-import { Button } from './components/Button'
+//import { Button } from './components/Button'
+import { Home } from './pages/Home';
 
 function App() {
-return (
-<div>
-  <h1>Hello world</h1>
-  <Button />
-  <Button />
-  <Button />
-  <Button />
-</div>
-
-);
+  return (
+    <Home/>
+  );
 }
 
 export default App;
