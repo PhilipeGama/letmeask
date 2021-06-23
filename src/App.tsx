@@ -1,21 +1,21 @@
-import { useState } from 'react';
-import { createContext }from 'react';
-import { BrowserRouter, Route  }from 'react-router-dom';
+import { BrowserRouter, Route, Switch  }from 'react-router-dom';
 
 import { Home } from './pages/Home';
 import { NewRoom } from './pages/NewRoom';
+import { Room } from './pages/Room';
 
-export const TestContext = createContext({}) as any;
+import { AuthContextProvide } from './contexts/AuthContexts'
 
 function App() {
-  const [value, setValue] = useState('Teste');
   return (
     <BrowserRouter>
-      <TestContext.Provider value={{value, setValue}}>
-        <Route path="/" exact component={Home}/>
-        <Route path="/rooms/new" component={NewRoom}/>
-      </TestContext.Provider>
-    
+      <AuthContextProvide>
+        <Switch>
+          <Route path="/" exact component={Home}/>
+          <Route path="/rooms/new" exact component={NewRoom}/>
+          <Route path="/rooms/:id" component={Room}/>
+        </Switch>
+      </AuthContextProvide>
     </BrowserRouter>
   );
 }
