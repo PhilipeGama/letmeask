@@ -32,7 +32,6 @@ export function Home(){
         <p>Tire as dúvidas de sua audiência em tempo real</p>
       </aside>
       <main>
-
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />
           <button onClick={handleCreateRoom} className="create-room">
@@ -40,6 +39,7 @@ export function Home(){
             Crie sua sala com o Google
           </button>
           <div className="separator">ou entre em uma sala</div>
+
           <form action="">
             <input 
             type="text" 
