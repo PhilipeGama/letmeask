@@ -32,10 +32,6 @@ export function NewRoom(){
     history.push(`/rooms/${firebaseRoom.key}`)
   }
 
-  async function handleJoinRoom(){
-    
-  }
-
   return(
     <div id="page-auth">
       <aside>
@@ -54,13 +50,13 @@ export function NewRoom(){
             onChange={event => setNewRoom(event.target.value)}
             value={newRoom}
             />
-            <Button type="submit">
-              Criar sala
-            </Button>
+             <p>
+              Quer entrar em uma sala existente? <Link to="/">clique aqui</Link>
+            </p>
           </form>
-          <p>
-            Quer entrar em uma sala existente? <Link to="/">clique aqui</Link>
-          </p>
+          <Button type="submit">
+              Criar sala
+          </Button>
         </div>
       </main>
     </div>
