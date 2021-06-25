@@ -13,7 +13,10 @@ para usar react-router-dom com typescript
 yarn add @types/react-router-dom -D
 
 
+react-modal 
+
 code lessons
 1 - #together
 2 - #unidade
 3 - #embuscadeevolução
+4 - #legacy
