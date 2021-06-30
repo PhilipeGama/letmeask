@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 
 import logoImg from '../assets/images/logo.svg';
@@ -18,11 +18,24 @@ type RoomParms = {
 }
 
 export function Room(){
-  const { user } = useAuth();
+  const history = useHistory();
+  const {user, signInWithGoogle} = useAuth();
+
+
+
+  //const { user } = useAuth();
   const params = useParams<RoomParms>();
   const roomId = params.id;
   const [newQuestion, setNewQuestion] = useState('');
   const { title, questions} = useRoom(roomId);
+
+
+  async function handleCreateRoom(){
+    if(!user) {
+      await signInWithGoogle()
+    }
+    //history.push('/rooms/new');
+  }
 
   async function handleLikeQuestion(questionId: string, likeId: string | undefined){
     if(likeId) {
@@ -87,7 +100,7 @@ export function Room(){
                   <span>{user.name}</span>
                 </div>  
               ) : (
-                <span>Para enviar uma pergunta, <button>faça seu login</button></span>
+                <span>Para enviar uma pergunta, <button onClick={handleCreateRoom}>faça seu login</button></span>
               )
             }
             <Button type="submit" disabled={!user}>Enviar pergunta</Button>
