@@ -135,7 +135,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/marcelo-rafael/nlw-06-letmeask
+$ git clone https://github.com//PhilipeGama/nlw-06-letmeask
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd nlw-06-letmeask
